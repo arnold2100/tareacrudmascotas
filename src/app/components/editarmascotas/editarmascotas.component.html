@@ -1,0 +1,21 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card-body">
+                <h3>{{titulo}}</h3>
+                <span *ngIf= "submited && crearmascota.invalid" >LOS CAMPOS DEBEN ESTAR LLENOS</span>
+                <form action="" class="mt-4" [formGroup]="crearmascota" (ngSubmit)="agregareditarmascota()">
+                    <input type="text" class="form-control form-control-lg mb-2" placeholder="DUEÑO DE LA MASCOTA" formControlName="duenio">
+                    <input type="text" class="form-control form-control-lg" placeholder="NOMBRE DE LA MASCOTA" formControlName="nombre">
+                    <input type="text" class="form-control form-control-lg mb-2" placeholder="ESPECIE" formControlName="especie">
+                    <input type="text" class="form-control form-control-lg" placeholder="RAZA" formControlName="raza">
+                    <input type="text" class="form-control form-control-lg mb-2" placeholder="DIRECCION" formControlName="domicilio">
+                    <div class="mt-3">
+                        <button type="text" class="btn btn-secondary btn-lg mr-3" routerLink="/mascotas">LISTA</button>
+                        <button type="submit" class="btn btn-dark btn-lg">AGREGAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

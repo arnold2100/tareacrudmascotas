@@ -1,0 +1,33 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3">LISTA DE MASCOTAS REGISTRADA EN VETERINARIA</span>
+            <br>
+            <button class="btn btn-dark btn-lg float-right mt-3" routerLink="/crearmascota">REGISTRAR MASCOTA</button>
+            <table class="table table-striped mt-5">
+                <thead>
+                  <tr>
+                    <th>PROPIETARIO</th>
+                    <th>NOMBRE DE LA MASCOTA</th>
+                    <th>ESPECIE</th>
+                    <th>RAZA</th>
+                    <th>DOMICILIO</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of objetomascota">
+                    <td>{{item.duenio}}</td>
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.especie}}</td>
+                    <td>{{item.raza}}</td>
+                    <td>{{item.domicilio}}</td>
+                    <td><i class="fas fa-edit text-info" [routerLink]="['/editarmascota/', item.id]">EDITAR</i></td>
+                    <td><i (click)="eliminarmasc(item.id)" class="fas fa-trash text-danger">BORRAR</i></td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+              
+        </div>
+    </div>
+</div>
